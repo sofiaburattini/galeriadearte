@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Arte - Vincent van Gogh</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        /* Estilos del menú de navegación */
+        .navbar {
+            background-color: #0099cc;
+            overflow: hidden;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: #0077b3;
+        }
+        /* Estilos de las secciones */
+        .section {
+            display: none; /* Ocultamos todas las secciones inicialmente */
+            padding: 20px;
+            background-color: #ffffff;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        /* Mostramos la sección activa */
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="navbar">
+    <a href="#inicio" onclick="mostrarSeccion('inicio')">Inicio</a>
+    <a href="#galeria" onclick="mostrarSeccion('galeria')">Galería</a>
+    <a href="#contacto" onclick="mostrarSeccion('contacto')">Contacto</a>
+</div>
+<div class="section" id="inicio">
+    <h1>¡Bienvenidos a la Galería de Arte de Vincent van Gogh!</h1>
+    <p>Explora las obras maestras del famoso pintor postimpresionista.</p>
+</div>
+<div class="section" id="galeria">
+    <h2>Galería de Obras</h2>
+    <img src="noche_estrellada.jpg" width="300">
+    <! Aquí puedes agregar las imágenes de las obras de Van Gogh -->
+    <img src="autoretrato.jpg"width="300">
+    <img src="vangogh.jpg"width="300">
+</div>
+<div class="section" id="contacto">
+    <h2>Contacto</h2>
+    <p>¿Tienes alguna pregunta o comentario? Contáctanos:</p>
+    <ul>
+        <li>Teléfono: 123-456-7890</li>
+        <li>Email: info@vangoghgallery.com</li>
+    </ul>
+</div>
+<script>
+    window.addEventListener('load', function() {
+        mostrarSeccion('inicio');
+    });
+
+    function mostrarSeccion(seccion) {
+        // Ocultamos todas las secciones
+        const secciones = document.querySelectorAll('.section');
+        secciones.forEach(s => s.classList.remove('active'));
+        // Mostramos la sección activa
+        document.getElementById(seccion).classList.add('active');
+    }
+</script>
+</body>
+</html>
